@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image Editor</title>
+        <link rel = "stylesheet" href = "index.css">
+        <script src = "index.js"></script>
+    </head>
+    <body>
+        <h1>Photo Editor &nbsp;<img class = "icon" src="https://img.icons8.com/ios/50/000000/photo-editor.png"/></h1>
+
+        <div class = "main">
+            <img src="image.jpeg" class="main-img" alt = "Edited Image">
+        </div>
+
+        <div class = "controls">
+            <div id ="grayscale-section">
+                <label>Grayscale &nbsp;
+                  <input type = "range" id = "grayscale" onchange = "update(this.dataset.prop, this.name, this.value, this.dataset.sizing)" name = "grayscale" min="0" max = "100" value = "0" step = "10" data-sizing = "%" data-prop="filter">
+                </label>
+            </div>
+
+            <div id = "blur-section">
+                <label>Blur &nbsp;
+                  <input type= "range" id = "blur" min = "0" max="100" step = "5" name = "blur" data-sizing="px" value = "0" data-prop="filter" onchange = "update(this.dataset.prop, this.name, this.value, this.dataset.sizing)">
+                </label>
+            </div>
+
+            <div id="brightness-section">
+                <label>Brightness &nbsp;
+                <input type= "range" id = "brightness" min = "0" max="100" step = "10" name = "brightness" data-sizing="%"  value = "0" data-prop="filter" onchange = "update(this.dataset.prop, this.name, this.value, this.dataset.sizing)">
+                </label>
+            </div>
+
+            <div id="contrast-section">
+                <label>Contrast &nbsp;
+                  <input type= "range" id = "contrast" min = "0" max="100" step = "10" name = "contrast" data-sizing="px" value = "0" data-prop="filter" onchange = "update(this.dataset.prop, this.name, this.value, this.dataset.sizing)">
+                </label>
+            </div>
+
+            <div id="invert-section">
+                <label>Invert &nbsp;
+                <input type= "range" id = "invert" min = "0" max="100" step = "10" name = "invert" data-sizing="%" value = "0" data-prop="filter" onchange = "update(this.dataset.prop, this.name, this.value, this.dataset.sizing)">
+                </label>
+            </div>
+
+            <div id="opacity-section">
+                <label>Opacity &nbsp;
+                  <input type= "range" id = "opacity" min = "0" max="100" step = "10" name = "opacity" data-sizing="%" value = "0" data-prop="filter" onchange = "update(this.dataset.prop, this.name, this.value, this.dataset.sizing)">
+                </label>
+            </div>
+
+            <div id="saturate-section">
+              <label>Saturate &nbsp;
+                  <input type= "range" id = "saturate" min = "0" max="100" step = "10" name = "saturate" data-sizing="%" value = "0" data-prop="filter" onchange = "update(this.dataset.prop, this.name, this.value, this.dataset.sizing)">
+                 </label>
+            </div>
+
+            <div id = "resize-section">
+                <label for="width">Width : &nbsp;
+                    <input type="number" id ="width" min="25" max="500"  step="10" name="width" data-sizing="px" value="25" onchange = "set(this.name, this.value, this.dataset.sizing)"></label><br>
+                <label for="height">Height : &nbsp;
+                  <input type="number"id = "height" min="25" max="500"  step="10" name="height" data-sizing="px" value="25" onchange = "set(this.name, this.value, this.dataset.sizing)"></label>
+            </div>
+        </div>
+
+
+        <div class="all-icon">
+            <div class = "icon-image grayscale" onclick = "myFunction('grayscale-section')">
+                <img class = "icon grayscale" src="https://img.icons8.com/ios-filled/50/000000/grayscale.png"/>
+                <p>Grayscale</p>
+            </div>
+
+            <div class = "icon-image blur" onclick = "myFunction('blur-section')">
+                <img class = "icon blur" src="https://img.icons8.com/ios-glyphs/30/000000/blur.png"/>
+                <p>Blur</p>
+            </div>
+
+            <div class = "icon-image brightness" onclick = "myFunction('brightness-section')">
+                <img class = "icon brightness" src="https://img.icons8.com/ios-glyphs/30/000000/sun--v2.png"/>
+                <p>Brightness</p>
+            </div>
+
+            <div class = "icon-image contrast" onclick = "myFunction('contrast-section')">
+                <img class = "icon contrast" src="https://img.icons8.com/ios-glyphs/30/000000/contrast.png"/>
+                <p>Contrast</p>
+            </div>
+
+            <div class = "icon-image invert" onclick = "myFunction('invert-section')">
+                <img class = "icon invert" src="https://img.icons8.com/carbon-copy/100/000000/invert-colors.png"/>
+                <p>Invert</p>
+            </div>
+
+            <div class = "icon-image opacity" onclick = "myFunction('opacity-section')">
+                <img class = "icon opacity" src="https://img.icons8.com/material-two-tone/24/000000/opacity.png"/>
+                <p>Opacity</p>
+            </div>
+
+            <div class = "icon-image saturate" onclick = "myFunction('saturate-section')">
+                <img class = "icon saturate" src="https://img.icons8.com/ios-filled/50/000000/saturation.png"/>
+                <p>Saturate</p>
+            </div>
+
+            <div class = "icon-image resize" onclick = "myFunction('resize-section')">
+                <img class = "icon resize" src="https://img.icons8.com/wired/50/000000/resize.png"/>
+                <p>Resize</p>
+            </div>
+
+        </div>
+    </body>
+</html>
